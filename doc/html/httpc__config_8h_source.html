@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HFC: httpc_config.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HFC
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('httpc__config_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">httpc_config.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="httpc__config_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @Author       : Zeepunt</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * @Date         : 2023-06-17 12:26:59</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @LastEditTime : 2023-06-17 13:59:32</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  </span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Gitee : https://gitee.com/zeepunt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Github: https://github.com/zeepunt</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Copyright (c) 2023 by Zeepunt, All Rights Reserved. </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef __HTTPC_CONFIG_H__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define __HTTPC_CONFIG_H__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;netdb.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;arpa/inet.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a159ca84d25a5487d8e81e4438725df19">   31</a></span>&#160;<span class="preprocessor">#define LOG   printf</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">   32</a></span>&#160;<span class="preprocessor">#define DEBUG 1</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#ae1103fea1e1b3c41ca3322d5389f7162">   33</a></span>&#160;<span class="preprocessor">#define INFO  1</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a271d8f7f52be750e5c744a394ec71344">   34</a></span>&#160;<span class="preprocessor">#define WARN  1</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a8fe83ac76edc595f6b98cd4a4127aed5">   35</a></span>&#160;<span class="preprocessor">#define ERROR 1</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#ac06cfc686322558f590c50eab8622ebd">   37</a></span>&#160;<span class="preprocessor">#define LOG_DEBUG(fmt, ...)                                                        \</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">    do {                                                                           \</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">        LOG(&quot;\033[37m[%s:%d]&quot;</span> fmt &quot;\033[0m\n&quot;, __func__, __LINE__, ##__VA_ARGS__); \</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    } while (0)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#ae69d735f8291bd2aff230fe6ffb4d4b3">   42</a></span>&#160;<span class="preprocessor">#define LOG_INFO(fmt, ...)                                                         \</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">    do {                                                                           \</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">        LOG(&quot;\033[32m[%s:%d]&quot;</span> fmt &quot;\033[0m\n&quot;, __func__, __LINE__, ##__VA_ARGS__); \</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    } while (0)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#adba1363ea408060eab75cb5a48dcb907">   47</a></span>&#160;<span class="preprocessor">#define LOG_WARN(fmt, ...)                                                         \</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">    do {                                                                           \</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">        LOG(&quot;\033[33m[%s:%d]&quot;</span> fmt &quot;\033[0m\n&quot;, __func__, __LINE__, ##__VA_ARGS__); \</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    } while (0)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">   52</a></span>&#160;<span class="preprocessor">#define LOG_ERROR(fmt, ...)                                                        \</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">    do {                                                                           \</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">        LOG(&quot;\033[31m[%s:%d]&quot;</span> fmt &quot;\033[0m\n&quot;, __func__, __LINE__, ##__VA_ARGS__); \</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } while (0)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#if DEBUG</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#aa81b3a410ad4b1c0f9a849fa190fe90d">   58</a></span>&#160;<span class="preprocessor">#define httpc_debug LOG_DEBUG</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define httpc_debug</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#if INFO</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#aec019c432dc20835c69d1d7e620f1e83">   64</a></span>&#160;<span class="preprocessor">#define httpc_info LOG_INFO</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define httpc_info</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#if WARN</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#af3c7e51310559a8624e67fbee69aa902">   70</a></span>&#160;<span class="preprocessor">#define httpc_warn LOG_WARN</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define httpc_warn</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#if ERROR</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a0c5cd564aecfebb58e1f0393e47867b5">   76</a></span>&#160;<span class="preprocessor">#define httpc_error LOG_ERROR</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define httpc_error</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a85f0258063e65c667a401badf42342d9">   84</a></span>&#160;<span class="preprocessor">#define httpc_malloc malloc</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a89259c87fc021bc632a482ef37fcbebc">   85</a></span>&#160;<span class="preprocessor">#define httpc_calloc calloc</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a3f73674bc442ea92cdfb483c820c352c">   86</a></span>&#160;<span class="preprocessor">#define httpc_free   free</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#aa2b7a682109a6f2b00d6b6bf9493cbf2">   88</a></span>&#160;<span class="preprocessor">#define safe_free(p)       \</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">    do {                   \</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">        if (p) {           \</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">            httpc_free(p); \</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">            p = NULL;      \</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">        }                  \</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#ab48ff699e6cd8e97350f5c5e6e48752f">   99</a></span>&#160;<span class="preprocessor">#define HTTPC_CFG_ENABLE_MBEDTLS      </span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a22b9120b208c114d3dacbef5da1f989f">  100</a></span>&#160;<span class="preprocessor">#define HTTPC_CFG_ENABLE_NGHTTP2      </span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="httpc__config_8h.html#a247adfca23ce7c251cbb71f672aa6916">  102</a></span>&#160;<span class="preprocessor">#define HTTPC_CFG_SOCKET_TIMEOUT (10) </span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __HTTPC_CONFIG_H__ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="httpc__config_8h.html">httpc_config.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

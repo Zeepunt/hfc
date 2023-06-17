@@ -1,0 +1,10 @@
+target("mbedtls")
+    set_kind("object")
+    add_includedirs("mbedtls-3.4.0/include", {public = true})
+    add_files("mbedtls-3.4.0/library/*.c")
+
+target("nghttp2")
+    set_kind("object")
+    add_includedirs("nghttp2-1.53.0/lib/includes", {public = true})
+    add_includedirs("nghttp2-1.53.0/lib")
+    add_files("nghttp2-1.53.0/lib/*.c")

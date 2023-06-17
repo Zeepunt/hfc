@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HFC: httpc.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HFC
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('httpc_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">httpc.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="httpc_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @Author       : Zeepunt</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * @Date         : 2023-06-17 13:11:00</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @LastEditTime : 2023-06-17 13:57:13</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  </span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Gitee : https://gitee.com/zeepunt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Github: https://github.com/zeepunt</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Copyright (c) 2023 by Zeepunt, All Rights Reserved. </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef __HTTPC_H__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define __HTTPC_H__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="httpc__config_8h.html">httpc_config.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef NULL</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">   17</a></span>&#160;<span class="preprocessor">#define NULL ((void*)0)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="httpc_8h.html#a1866f433fbbefecf1600136f5a662783">   23</a></span>&#160;<span class="preprocessor">#define HTTPC_ERR_OK    (0)  </span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="httpc_8h.html#ab34afc305d5fb225bfe445350e5b24dd">   24</a></span>&#160;<span class="preprocessor">#define HTTPC_ERR_FAIL  (-1) </span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="httpc_8h.html#ae15a7cf1dcea8783b0a8f7bd5cb81b8e">   25</a></span>&#160;<span class="preprocessor">#define HTTPC_ERR_PARAM (-2) </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="httpc_8h.html#a2cc387912ee215201a98094af0a94780">   26</a></span>&#160;<span class="preprocessor">#define HTTPC_ERR_MEM   (-3) </span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="httpc_8h.html#a8859a48d488dd6e14ca8462bd8ab62f5">   27</a></span>&#160;<span class="preprocessor">#define HTTPC_ERR_SEND  (-4) </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> _http_client_mode {</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5aac2429afb57717269a330456221cd5d3">   30</a></span>&#160;    <a class="code" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5aac2429afb57717269a330456221cd5d3">HTTPC_MODE_UNKONW</a> = 0,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5a0758d4c0662398383536eeddd0eb6f95">   31</a></span>&#160;    <a class="code" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5a0758d4c0662398383536eeddd0eb6f95">HTTPC_MODE_NORMAL</a> = 1,  </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5a92da915c676527a3ae13803168fd807d">   32</a></span>&#160;    <a class="code" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5a92da915c676527a3ae13803168fd807d">HTTPC_MODE_CHUNK</a>  = 2,  </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5acba842af93d79ef19880e979af39d139">   33</a></span>&#160;    <a class="code" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5acba842af93d79ef19880e979af39d139">HTTPC_MODE_MAX</a>    = 0xff,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <a class="code" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5">httpc_mode_t</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011">   36</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> _http_client_version {</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011a9bb55bc81c30796d8f394db82144b5d1">   37</a></span>&#160;    <a class="code" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011a9bb55bc81c30796d8f394db82144b5d1">HTTP_VER_1_1</a> = 0, </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011a3c7cbb9a7263be97c387cac8314e25e4">   38</a></span>&#160;    <a class="code" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011a3c7cbb9a7263be97c387cac8314e25e4">HTTP_VER_2_0</a> = 1, </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <a class="code" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011">httpc_ver_t</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structhttpc__tls__info__t.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>_http_client_tls_info {</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structhttpc__tls__info__t.html#aa103f5b45b340b7fa8506684dd5a5205">   42</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structhttpc__tls__info__t.html#aa103f5b45b340b7fa8506684dd5a5205">cert</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structhttpc__tls__info__t.html#ae1baf947ebef6ed5212a6bb3d8e587a8">   43</a></span>&#160;    uint32_t <a class="code" href="structhttpc__tls__info__t.html#ae1baf947ebef6ed5212a6bb3d8e587a8">cert_len</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structhttpc__tls__info__t.html#a2cf9c577de249c9a90d7b602ffe7f1de">   44</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structhttpc__tls__info__t.html#a2cf9c577de249c9a90d7b602ffe7f1de">pk</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structhttpc__tls__info__t.html#a7812cf1d0a684b96e4e426562d4c54a0">   45</a></span>&#160;    uint32_t <a class="code" href="structhttpc__tls__info__t.html#a7812cf1d0a684b96e4e426562d4c54a0">pk_len</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <a class="code" href="structhttpc__tls__info__t.html">httpc_tls_info_t</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#if defined(HTTPC_CFG_ENABLE_MBEDTLS)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;mbedtls/net_sockets.h&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;mbedtls/ssl.h&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;mbedtls/x509_crt.h&gt;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &lt;mbedtls/pk.h&gt;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;mbedtls/entropy.h&gt;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;mbedtls/ctr_drbg.h&gt;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structhttpc__mebdtls__ctx__t.html">   56</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>_http_client_mebdtls_context {</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structhttpc__mebdtls__ctx__t.html#a5241b50edcedcd3bc13f6b3b20ac7f3d">   57</a></span>&#160;    mbedtls_net_context <a class="code" href="structhttpc__mebdtls__ctx__t.html#a5241b50edcedcd3bc13f6b3b20ac7f3d">net_ctx</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structhttpc__mebdtls__ctx__t.html#ae07e15e6db1ee98f0b345ca7cdfa8701">   58</a></span>&#160;    mbedtls_ssl_context <a class="code" href="structhttpc__mebdtls__ctx__t.html#ae07e15e6db1ee98f0b345ca7cdfa8701">ssl_ctx</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structhttpc__mebdtls__ctx__t.html#a33ce33cd2660b0ef48df3dafcaf1411c">   59</a></span>&#160;    mbedtls_ssl_config <a class="code" href="structhttpc__mebdtls__ctx__t.html#a33ce33cd2660b0ef48df3dafcaf1411c">ssl_cfg</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structhttpc__mebdtls__ctx__t.html#a8dc82fe2c6379c3bfdb3db028f08b98e">   61</a></span>&#160;    mbedtls_x509_crt <a class="code" href="structhttpc__mebdtls__ctx__t.html#a8dc82fe2c6379c3bfdb3db028f08b98e">x509_crt</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structhttpc__mebdtls__ctx__t.html#a8908deb7a13072ab13f45e60ec3cee60">   62</a></span>&#160;    mbedtls_pk_context <a class="code" href="structhttpc__mebdtls__ctx__t.html#a8908deb7a13072ab13f45e60ec3cee60">pk_ctx</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structhttpc__mebdtls__ctx__t.html#af48a717eeb55f980124e479f5337282c">   64</a></span>&#160;    mbedtls_entropy_context <a class="code" href="structhttpc__mebdtls__ctx__t.html#af48a717eeb55f980124e479f5337282c">entropy_ctx</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structhttpc__mebdtls__ctx__t.html#a15c6fd475155f5040e8a06c5e4a2b1ae">   65</a></span>&#160;    mbedtls_ctr_drbg_context <a class="code" href="structhttpc__mebdtls__ctx__t.html#a15c6fd475155f5040e8a06c5e4a2b1ae">ctr_drbg_ctx</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <a class="code" href="structhttpc__mebdtls__ctx__t.html">httpc_mebdtls_ctx_t</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HTTPC_CFG_ENABLE_MBEDTLS */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structhttpc__mem__node__t.html">   69</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>_http_mem_node {</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structhttpc__mem__node__t.html#a1fe855c208bc17a51a4d34fefdb2d5b1">   70</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structhttpc__mem__node__t.html#a1fe855c208bc17a51a4d34fefdb2d5b1">buf</a>;    </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structhttpc__mem__node__t.html#a7666bbf00997cc13da27d55cb05d27c4">   71</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structhttpc__mem__node__t.html#a7666bbf00997cc13da27d55cb05d27c4">buf_len</a>;  </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structhttpc__mem__node__t.html#acec2350cc89da3f118446c42b4e79608">   72</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structhttpc__mem__node__t.html#acec2350cc89da3f118446c42b4e79608">buf_used</a>; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <a class="code" href="structhttpc__mem__node__t.html">httpc_mem_node_t</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structhttpc__t.html">   75</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>_http_client {</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structhttpc__t.html#a1c2046dcb30a629d6d9f45ff8f403f12">   82</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structhttpc__t.html#a1c2046dcb30a629d6d9f45ff8f403f12">host</a>;                       </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structhttpc__t.html#a44196e6a5696d10442c29e639437196e">   83</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structhttpc__t.html#a44196e6a5696d10442c29e639437196e">path</a>;                       </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structhttpc__t.html#a098b93d20b1c1a679aa881fb02a7cca1">   85</a></span>&#160;    <a class="code" href="structhttpc__mem__node__t.html">httpc_mem_node_t</a> *<a class="code" href="structhttpc__t.html#a098b93d20b1c1a679aa881fb02a7cca1">header_node</a>;    </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structhttpc__t.html#a3666576f6b88007cc7b8f26c7da596c8">   87</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structhttpc__t.html#a3666576f6b88007cc7b8f26c7da596c8">socket</a>;                       </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structhttpc__t.html#ab87e6ba68d41639a13e89b5a2cf400e7">   88</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structhttpc__t.html#ab87e6ba68d41639a13e89b5a2cf400e7">response_code</a>;                </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structhttpc__t.html#a675a47f46ecd9d8ec01c738e04c28cbe">   90</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structhttpc__t.html#a675a47f46ecd9d8ec01c738e04c28cbe">content_length</a>;               </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structhttpc__t.html#a9fc0096dd38d9cc699740cf0adb6e6f4">   91</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structhttpc__t.html#a9fc0096dd38d9cc699740cf0adb6e6f4">chunked</a>;                      </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="structhttpc__t.html#a68fdcf4fbfa70afd7b5f6f5f5056a9b1">   93</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structhttpc__t.html#a68fdcf4fbfa70afd7b5f6f5f5056a9b1">enable_mbedtls</a>;              </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#if defined(HTTPC_CFG_ENABLE_MBEDTLS)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structhttpc__t.html#abc4a4aaa45cfc253effe65a0c835d2a5">   95</a></span>&#160;    <a class="code" href="structhttpc__mebdtls__ctx__t.html">httpc_mebdtls_ctx_t</a> *<a class="code" href="structhttpc__t.html#abc4a4aaa45cfc253effe65a0c835d2a5">mbedtls_ctx</a>; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <a class="code" href="structhttpc__t.html">httpc_t</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="httpc_8h.html#a5a00c9969845b7f23028da1801b008ba">httpc_header_get</a>(<a class="code" href="structhttpc__t.html">httpc_t</a> *httpc, <span class="keyword">const</span> <span class="keywordtype">char</span> *fields);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">int</span> <a class="code" href="httpc_8h.html#a49c0b7c65a0a217cad96faf2d8701f64">httpc_header_set</a>(<a class="code" href="structhttpc__t.html">httpc_t</a> *httpc, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">int</span> <a class="code" href="httpc_8h.html#abdb8e9b18749a368853f241469d8e01e">httpc_send_request</a>(<a class="code" href="structhttpc__t.html">httpc_t</a> *httpc, <span class="keywordtype">char</span> *send_buf, <span class="keywordtype">int</span> send_size);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">int</span> <a class="code" href="httpc_8h.html#a729783fc3ed30412c879a5b064f56451">httpc_recv_response</a>(<a class="code" href="structhttpc__t.html">httpc_t</a> *httpc, <a class="code" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5">httpc_mode_t</a> mode, <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<a class="code" href="structhttpc__t.html">httpc_t</a> *<a class="code" href="httpc_8h.html#a1627740c64f005340ab0a7aeec00f7dd">httpc_init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *uri, <span class="keywordtype">char</span> *port, <a class="code" href="structhttpc__mem__node__t.html">httpc_mem_node_t</a> *node, <a class="code" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011">httpc_ver_t</a> version, <a class="code" href="structhttpc__tls__info__t.html">httpc_tls_info_t</a> *ssl_info);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">void</span> <a class="code" href="httpc_8h.html#a8a0e8504bb00ceecc037ef20fde54bf5">httpc_deinit</a>(<a class="code" href="structhttpc__t.html">httpc_t</a> *httpc);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#if defined(HTTPC_CFG_ENABLE_NGHTTP2)</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#include &lt;nghttp2/nghttp2.h&gt;</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="httpc_8h.html#a7600df2adb0d0a3350872628b6870d8a">  155</a></span>&#160;<span class="preprocessor">#define MAKE_HTTP2_HEADER_NV(NAME, VALUE)                                                    \</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">    {                                                                                        \</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">        (uint8_t *)NAME, (uint8_t *)VALUE, strlen(NAME), strlen(VALUE), NGHTTP2_NV_FLAG_NONE \</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="httpc_8h.html#a6c49f3bbe520c608159235e55352dafe">  160</a></span>&#160;<span class="keyword">typedef</span> int (*<a class="code" href="httpc_8h.html#a6c49f3bbe520c608159235e55352dafe">httpc2_read_from_user_t</a>)(int32_t stream_id, uint8_t *buf, <span class="keywordtype">size_t</span> length, uint32_t *data_flags);</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="httpc_8h.html#adcd6962e23fb84f6b7ee479dea8caa58">  161</a></span>&#160;<span class="keyword">typedef</span> int (*<a class="code" href="httpc_8h.html#adcd6962e23fb84f6b7ee479dea8caa58">httpc2_write_to_user_t</a>)(int32_t stream_id, uint8_t *buf, <span class="keywordtype">size_t</span> length, uint32_t data_flags);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="structhttpc2__t.html">  163</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>_httpc2_cilent {</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="structhttpc2__t.html#ac469cde082b26665d435d4f1aecc52c7">  164</a></span>&#160;    <a class="code" href="structhttpc__t.html">httpc_t</a> *<a class="code" href="structhttpc2__t.html#ac469cde082b26665d435d4f1aecc52c7">httpc</a>;                        </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="structhttpc2__t.html#ae1921ca282c2dfd1140f05c4ab47fab5">  165</a></span>&#160;    nghttp2_session *<a class="code" href="structhttpc2__t.html#ae1921ca282c2dfd1140f05c4ab47fab5">session</a>;              </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="structhttpc2__t.html#a5cf671c99c5829ad48e8513bcb0a930a">  166</a></span>&#160;    <a class="code" href="httpc_8h.html#adcd6962e23fb84f6b7ee479dea8caa58">httpc2_write_to_user_t</a> <a class="code" href="structhttpc2__t.html#a5cf671c99c5829ad48e8513bcb0a930a">write_callback</a>; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;} <a class="code" href="structhttpc2__t.html">httpc2_t</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keywordtype">int</span> <a class="code" href="httpc_8h.html#a95e7361d32f8242cb437a371783f394f">httpc2_submit_request</a>(<a class="code" href="structhttpc2__t.html">httpc2_t</a> *httpc2, <span class="keyword">const</span> nghttp2_nv *nva, <span class="keywordtype">size_t</span> nva_len, <a class="code" href="httpc_8h.html#a6c49f3bbe520c608159235e55352dafe">httpc2_read_from_user_t</a> read_callback, <a class="code" href="httpc_8h.html#adcd6962e23fb84f6b7ee479dea8caa58">httpc2_write_to_user_t</a> write_callback);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keywordtype">int</span> <a class="code" href="httpc_8h.html#ab968562f4f8639bb123a7b8999d48e00">httpc2_core_run</a>(<a class="code" href="structhttpc2__t.html">httpc2_t</a> *httpc2);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<a class="code" href="structhttpc2__t.html">httpc2_t</a> *<a class="code" href="httpc_8h.html#a79c43ecd15d3a747d43909fcbe6dee3b">httpc2_init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *uri, <span class="keywordtype">char</span> *port, <a class="code" href="structhttpc__tls__info__t.html">httpc_tls_info_t</a> *ssl_info);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keywordtype">void</span> <a class="code" href="httpc_8h.html#afc4f392a2100a59d31d4ffa474e78b65">httpc2_deinit</a>(<a class="code" href="structhttpc2__t.html">httpc2_t</a> *httpc2);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HTTPC_CFG_ENABLE_NGHTTP2 */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __HTTPC_H__ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="ahttpc_8h_html_a1627740c64f005340ab0a7aeec00f7dd"><div class="ttname"><a href="httpc_8h.html#a1627740c64f005340ab0a7aeec00f7dd">httpc_init</a></div><div class="ttdeci">httpc_t * httpc_init(const char *uri, char *port, httpc_mem_node_t *node, httpc_ver_t version, httpc_tls_info_t *ssl_info)</div><div class="ttdoc">HTTP Client 初始化</div><div class="ttdef"><b>Definition:</b> httpc.c:688</div></div>
+<div class="ttc" id="ahttpc_8h_html_a49c0b7c65a0a217cad96faf2d8701f64"><div class="ttname"><a href="httpc_8h.html#a49c0b7c65a0a217cad96faf2d8701f64">httpc_header_set</a></div><div class="ttdeci">int httpc_header_set(httpc_t *httpc, const char *fmt,...)</div><div class="ttdoc">自定义填充头部缓冲区</div><div class="ttdef"><b>Definition:</b> httpc.c:518</div></div>
+<div class="ttc" id="ahttpc_8h_html_a5a00c9969845b7f23028da1801b008ba"><div class="ttname"><a href="httpc_8h.html#a5a00c9969845b7f23028da1801b008ba">httpc_header_get</a></div><div class="ttdeci">char * httpc_header_get(httpc_t *httpc, const char *fields)</div><div class="ttdoc">根据关键字从响应中找出对应的数据</div><div class="ttdef"><b>Definition:</b> httpc.c:477</div></div>
+<div class="ttc" id="ahttpc_8h_html_a6c49f3bbe520c608159235e55352dafe"><div class="ttname"><a href="httpc_8h.html#a6c49f3bbe520c608159235e55352dafe">httpc2_read_from_user_t</a></div><div class="ttdeci">int(* httpc2_read_from_user_t)(int32_t stream_id, uint8_t *buf, size_t length, uint32_t *data_flags)</div><div class="ttdef"><b>Definition:</b> httpc.h:160</div></div>
+<div class="ttc" id="ahttpc_8h_html_a729783fc3ed30412c879a5b064f56451"><div class="ttname"><a href="httpc_8h.html#a729783fc3ed30412c879a5b064f56451">httpc_recv_response</a></div><div class="ttdeci">int httpc_recv_response(httpc_t *httpc, httpc_mode_t mode, char *buf, int size)</div><div class="ttdoc">接收 HTTP 响应报文的主体数据</div><div class="ttdef"><b>Definition:</b> httpc.c:662</div></div>
+<div class="ttc" id="ahttpc_8h_html_a79c43ecd15d3a747d43909fcbe6dee3b"><div class="ttname"><a href="httpc_8h.html#a79c43ecd15d3a747d43909fcbe6dee3b">httpc2_init</a></div><div class="ttdeci">httpc2_t * httpc2_init(const char *uri, char *port, httpc_tls_info_t *ssl_info)</div><div class="ttdoc">HTTP/2 Client 初始化</div><div class="ttdef"><b>Definition:</b> httpc.c:952</div></div>
+<div class="ttc" id="ahttpc_8h_html_a8a0e8504bb00ceecc037ef20fde54bf5"><div class="ttname"><a href="httpc_8h.html#a8a0e8504bb00ceecc037ef20fde54bf5">httpc_deinit</a></div><div class="ttdeci">void httpc_deinit(httpc_t *httpc)</div><div class="ttdoc">HTTP Client 销毁</div><div class="ttdef"><b>Definition:</b> httpc.c:746</div></div>
+<div class="ttc" id="ahttpc_8h_html_a95e7361d32f8242cb437a371783f394f"><div class="ttname"><a href="httpc_8h.html#a95e7361d32f8242cb437a371783f394f">httpc2_submit_request</a></div><div class="ttdeci">int httpc2_submit_request(httpc2_t *httpc2, const nghttp2_nv *nva, size_t nva_len, httpc2_read_from_user_t read_callback, httpc2_write_to_user_t write_callback)</div><div class="ttdoc">提交一个 HTTP/2 请求</div><div class="ttdef"><b>Definition:</b> httpc.c:899</div></div>
+<div class="ttc" id="ahttpc_8h_html_ab178b02f1af5c074ba6c085c8a7afcf5"><div class="ttname"><a href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5">httpc_mode_t</a></div><div class="ttdeci">httpc_mode_t</div><div class="ttdef"><b>Definition:</b> httpc.h:29</div></div>
+<div class="ttc" id="ahttpc_8h_html_ab178b02f1af5c074ba6c085c8a7afcf5a0758d4c0662398383536eeddd0eb6f95"><div class="ttname"><a href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5a0758d4c0662398383536eeddd0eb6f95">HTTPC_MODE_NORMAL</a></div><div class="ttdeci">@ HTTPC_MODE_NORMAL</div><div class="ttdef"><b>Definition:</b> httpc.h:31</div></div>
+<div class="ttc" id="ahttpc_8h_html_ab178b02f1af5c074ba6c085c8a7afcf5a92da915c676527a3ae13803168fd807d"><div class="ttname"><a href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5a92da915c676527a3ae13803168fd807d">HTTPC_MODE_CHUNK</a></div><div class="ttdeci">@ HTTPC_MODE_CHUNK</div><div class="ttdef"><b>Definition:</b> httpc.h:32</div></div>
+<div class="ttc" id="ahttpc_8h_html_ab178b02f1af5c074ba6c085c8a7afcf5aac2429afb57717269a330456221cd5d3"><div class="ttname"><a href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5aac2429afb57717269a330456221cd5d3">HTTPC_MODE_UNKONW</a></div><div class="ttdeci">@ HTTPC_MODE_UNKONW</div><div class="ttdef"><b>Definition:</b> httpc.h:30</div></div>
+<div class="ttc" id="ahttpc_8h_html_ab178b02f1af5c074ba6c085c8a7afcf5acba842af93d79ef19880e979af39d139"><div class="ttname"><a href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5acba842af93d79ef19880e979af39d139">HTTPC_MODE_MAX</a></div><div class="ttdeci">@ HTTPC_MODE_MAX</div><div class="ttdef"><b>Definition:</b> httpc.h:33</div></div>
+<div class="ttc" id="ahttpc_8h_html_ab968562f4f8639bb123a7b8999d48e00"><div class="ttname"><a href="httpc_8h.html#ab968562f4f8639bb123a7b8999d48e00">httpc2_core_run</a></div><div class="ttdeci">int httpc2_core_run(httpc2_t *httpc2)</div><div class="ttdoc">运行一次 HTTP/2 的发送/接收操作</div><div class="ttdef"><b>Definition:</b> httpc.c:929</div></div>
+<div class="ttc" id="ahttpc_8h_html_abdb8e9b18749a368853f241469d8e01e"><div class="ttname"><a href="httpc_8h.html#abdb8e9b18749a368853f241469d8e01e">httpc_send_request</a></div><div class="ttdeci">int httpc_send_request(httpc_t *httpc, char *send_buf, int send_size)</div><div class="ttdoc">发送 HTTP 请求, 并且接收和解析响应报文的头部信息</div><div class="ttdef"><b>Definition:</b> httpc.c:627</div></div>
+<div class="ttc" id="ahttpc_8h_html_abf791281ee000e9f7e7da16cbc579011"><div class="ttname"><a href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011">httpc_ver_t</a></div><div class="ttdeci">httpc_ver_t</div><div class="ttdef"><b>Definition:</b> httpc.h:36</div></div>
+<div class="ttc" id="ahttpc_8h_html_abf791281ee000e9f7e7da16cbc579011a3c7cbb9a7263be97c387cac8314e25e4"><div class="ttname"><a href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011a3c7cbb9a7263be97c387cac8314e25e4">HTTP_VER_2_0</a></div><div class="ttdeci">@ HTTP_VER_2_0</div><div class="ttdef"><b>Definition:</b> httpc.h:38</div></div>
+<div class="ttc" id="ahttpc_8h_html_abf791281ee000e9f7e7da16cbc579011a9bb55bc81c30796d8f394db82144b5d1"><div class="ttname"><a href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011a9bb55bc81c30796d8f394db82144b5d1">HTTP_VER_1_1</a></div><div class="ttdeci">@ HTTP_VER_1_1</div><div class="ttdef"><b>Definition:</b> httpc.h:37</div></div>
+<div class="ttc" id="ahttpc_8h_html_adcd6962e23fb84f6b7ee479dea8caa58"><div class="ttname"><a href="httpc_8h.html#adcd6962e23fb84f6b7ee479dea8caa58">httpc2_write_to_user_t</a></div><div class="ttdeci">int(* httpc2_write_to_user_t)(int32_t stream_id, uint8_t *buf, size_t length, uint32_t data_flags)</div><div class="ttdef"><b>Definition:</b> httpc.h:161</div></div>
+<div class="ttc" id="ahttpc_8h_html_afc4f392a2100a59d31d4ffa474e78b65"><div class="ttname"><a href="httpc_8h.html#afc4f392a2100a59d31d4ffa474e78b65">httpc2_deinit</a></div><div class="ttdeci">void httpc2_deinit(httpc2_t *httpc2)</div><div class="ttdoc">HTTP/2 Client 销毁</div><div class="ttdef"><b>Definition:</b> httpc.c:1013</div></div>
+<div class="ttc" id="ahttpc__config_8h_html"><div class="ttname"><a href="httpc__config_8h.html">httpc_config.h</a></div></div>
+<div class="ttc" id="astructhttpc2__t_html"><div class="ttname"><a href="structhttpc2__t.html">httpc2_t</a></div><div class="ttdef"><b>Definition:</b> httpc.h:163</div></div>
+<div class="ttc" id="astructhttpc2__t_html_a5cf671c99c5829ad48e8513bcb0a930a"><div class="ttname"><a href="structhttpc2__t.html#a5cf671c99c5829ad48e8513bcb0a930a">httpc2_t::write_callback</a></div><div class="ttdeci">httpc2_write_to_user_t write_callback</div><div class="ttdef"><b>Definition:</b> httpc.h:166</div></div>
+<div class="ttc" id="astructhttpc2__t_html_ac469cde082b26665d435d4f1aecc52c7"><div class="ttname"><a href="structhttpc2__t.html#ac469cde082b26665d435d4f1aecc52c7">httpc2_t::httpc</a></div><div class="ttdeci">httpc_t * httpc</div><div class="ttdef"><b>Definition:</b> httpc.h:164</div></div>
+<div class="ttc" id="astructhttpc2__t_html_ae1921ca282c2dfd1140f05c4ab47fab5"><div class="ttname"><a href="structhttpc2__t.html#ae1921ca282c2dfd1140f05c4ab47fab5">httpc2_t::session</a></div><div class="ttdeci">nghttp2_session * session</div><div class="ttdef"><b>Definition:</b> httpc.h:165</div></div>
+<div class="ttc" id="astructhttpc__mebdtls__ctx__t_html"><div class="ttname"><a href="structhttpc__mebdtls__ctx__t.html">httpc_mebdtls_ctx_t</a></div><div class="ttdef"><b>Definition:</b> httpc.h:56</div></div>
+<div class="ttc" id="astructhttpc__mebdtls__ctx__t_html_a15c6fd475155f5040e8a06c5e4a2b1ae"><div class="ttname"><a href="structhttpc__mebdtls__ctx__t.html#a15c6fd475155f5040e8a06c5e4a2b1ae">httpc_mebdtls_ctx_t::ctr_drbg_ctx</a></div><div class="ttdeci">mbedtls_ctr_drbg_context ctr_drbg_ctx</div><div class="ttdef"><b>Definition:</b> httpc.h:65</div></div>
+<div class="ttc" id="astructhttpc__mebdtls__ctx__t_html_a33ce33cd2660b0ef48df3dafcaf1411c"><div class="ttname"><a href="structhttpc__mebdtls__ctx__t.html#a33ce33cd2660b0ef48df3dafcaf1411c">httpc_mebdtls_ctx_t::ssl_cfg</a></div><div class="ttdeci">mbedtls_ssl_config ssl_cfg</div><div class="ttdef"><b>Definition:</b> httpc.h:59</div></div>
+<div class="ttc" id="astructhttpc__mebdtls__ctx__t_html_a5241b50edcedcd3bc13f6b3b20ac7f3d"><div class="ttname"><a href="structhttpc__mebdtls__ctx__t.html#a5241b50edcedcd3bc13f6b3b20ac7f3d">httpc_mebdtls_ctx_t::net_ctx</a></div><div class="ttdeci">mbedtls_net_context net_ctx</div><div class="ttdef"><b>Definition:</b> httpc.h:57</div></div>
+<div class="ttc" id="astructhttpc__mebdtls__ctx__t_html_a8908deb7a13072ab13f45e60ec3cee60"><div class="ttname"><a href="structhttpc__mebdtls__ctx__t.html#a8908deb7a13072ab13f45e60ec3cee60">httpc_mebdtls_ctx_t::pk_ctx</a></div><div class="ttdeci">mbedtls_pk_context pk_ctx</div><div class="ttdef"><b>Definition:</b> httpc.h:62</div></div>
+<div class="ttc" id="astructhttpc__mebdtls__ctx__t_html_a8dc82fe2c6379c3bfdb3db028f08b98e"><div class="ttname"><a href="structhttpc__mebdtls__ctx__t.html#a8dc82fe2c6379c3bfdb3db028f08b98e">httpc_mebdtls_ctx_t::x509_crt</a></div><div class="ttdeci">mbedtls_x509_crt x509_crt</div><div class="ttdef"><b>Definition:</b> httpc.h:61</div></div>
+<div class="ttc" id="astructhttpc__mebdtls__ctx__t_html_ae07e15e6db1ee98f0b345ca7cdfa8701"><div class="ttname"><a href="structhttpc__mebdtls__ctx__t.html#ae07e15e6db1ee98f0b345ca7cdfa8701">httpc_mebdtls_ctx_t::ssl_ctx</a></div><div class="ttdeci">mbedtls_ssl_context ssl_ctx</div><div class="ttdef"><b>Definition:</b> httpc.h:58</div></div>
+<div class="ttc" id="astructhttpc__mebdtls__ctx__t_html_af48a717eeb55f980124e479f5337282c"><div class="ttname"><a href="structhttpc__mebdtls__ctx__t.html#af48a717eeb55f980124e479f5337282c">httpc_mebdtls_ctx_t::entropy_ctx</a></div><div class="ttdeci">mbedtls_entropy_context entropy_ctx</div><div class="ttdef"><b>Definition:</b> httpc.h:64</div></div>
+<div class="ttc" id="astructhttpc__mem__node__t_html"><div class="ttname"><a href="structhttpc__mem__node__t.html">httpc_mem_node_t</a></div><div class="ttdef"><b>Definition:</b> httpc.h:69</div></div>
+<div class="ttc" id="astructhttpc__mem__node__t_html_a1fe855c208bc17a51a4d34fefdb2d5b1"><div class="ttname"><a href="structhttpc__mem__node__t.html#a1fe855c208bc17a51a4d34fefdb2d5b1">httpc_mem_node_t::buf</a></div><div class="ttdeci">char * buf</div><div class="ttdef"><b>Definition:</b> httpc.h:70</div></div>
+<div class="ttc" id="astructhttpc__mem__node__t_html_a7666bbf00997cc13da27d55cb05d27c4"><div class="ttname"><a href="structhttpc__mem__node__t.html#a7666bbf00997cc13da27d55cb05d27c4">httpc_mem_node_t::buf_len</a></div><div class="ttdeci">int buf_len</div><div class="ttdef"><b>Definition:</b> httpc.h:71</div></div>
+<div class="ttc" id="astructhttpc__mem__node__t_html_acec2350cc89da3f118446c42b4e79608"><div class="ttname"><a href="structhttpc__mem__node__t.html#acec2350cc89da3f118446c42b4e79608">httpc_mem_node_t::buf_used</a></div><div class="ttdeci">int buf_used</div><div class="ttdef"><b>Definition:</b> httpc.h:72</div></div>
+<div class="ttc" id="astructhttpc__t_html"><div class="ttname"><a href="structhttpc__t.html">httpc_t</a></div><div class="ttdef"><b>Definition:</b> httpc.h:75</div></div>
+<div class="ttc" id="astructhttpc__t_html_a098b93d20b1c1a679aa881fb02a7cca1"><div class="ttname"><a href="structhttpc__t.html#a098b93d20b1c1a679aa881fb02a7cca1">httpc_t::header_node</a></div><div class="ttdeci">httpc_mem_node_t * header_node</div><div class="ttdef"><b>Definition:</b> httpc.h:85</div></div>
+<div class="ttc" id="astructhttpc__t_html_a1c2046dcb30a629d6d9f45ff8f403f12"><div class="ttname"><a href="structhttpc__t.html#a1c2046dcb30a629d6d9f45ff8f403f12">httpc_t::host</a></div><div class="ttdeci">char * host</div><div class="ttdef"><b>Definition:</b> httpc.h:82</div></div>
+<div class="ttc" id="astructhttpc__t_html_a3666576f6b88007cc7b8f26c7da596c8"><div class="ttname"><a href="structhttpc__t.html#a3666576f6b88007cc7b8f26c7da596c8">httpc_t::socket</a></div><div class="ttdeci">int socket</div><div class="ttdef"><b>Definition:</b> httpc.h:87</div></div>
+<div class="ttc" id="astructhttpc__t_html_a44196e6a5696d10442c29e639437196e"><div class="ttname"><a href="structhttpc__t.html#a44196e6a5696d10442c29e639437196e">httpc_t::path</a></div><div class="ttdeci">char * path</div><div class="ttdef"><b>Definition:</b> httpc.h:83</div></div>
+<div class="ttc" id="astructhttpc__t_html_a675a47f46ecd9d8ec01c738e04c28cbe"><div class="ttname"><a href="structhttpc__t.html#a675a47f46ecd9d8ec01c738e04c28cbe">httpc_t::content_length</a></div><div class="ttdeci">int content_length</div><div class="ttdef"><b>Definition:</b> httpc.h:90</div></div>
+<div class="ttc" id="astructhttpc__t_html_a68fdcf4fbfa70afd7b5f6f5f5056a9b1"><div class="ttname"><a href="structhttpc__t.html#a68fdcf4fbfa70afd7b5f6f5f5056a9b1">httpc_t::enable_mbedtls</a></div><div class="ttdeci">bool enable_mbedtls</div><div class="ttdef"><b>Definition:</b> httpc.h:93</div></div>
+<div class="ttc" id="astructhttpc__t_html_a9fc0096dd38d9cc699740cf0adb6e6f4"><div class="ttname"><a href="structhttpc__t.html#a9fc0096dd38d9cc699740cf0adb6e6f4">httpc_t::chunked</a></div><div class="ttdeci">int chunked</div><div class="ttdef"><b>Definition:</b> httpc.h:91</div></div>
+<div class="ttc" id="astructhttpc__t_html_ab87e6ba68d41639a13e89b5a2cf400e7"><div class="ttname"><a href="structhttpc__t.html#ab87e6ba68d41639a13e89b5a2cf400e7">httpc_t::response_code</a></div><div class="ttdeci">int response_code</div><div class="ttdef"><b>Definition:</b> httpc.h:88</div></div>
+<div class="ttc" id="astructhttpc__t_html_abc4a4aaa45cfc253effe65a0c835d2a5"><div class="ttname"><a href="structhttpc__t.html#abc4a4aaa45cfc253effe65a0c835d2a5">httpc_t::mbedtls_ctx</a></div><div class="ttdeci">httpc_mebdtls_ctx_t * mbedtls_ctx</div><div class="ttdef"><b>Definition:</b> httpc.h:95</div></div>
+<div class="ttc" id="astructhttpc__tls__info__t_html"><div class="ttname"><a href="structhttpc__tls__info__t.html">httpc_tls_info_t</a></div><div class="ttdef"><b>Definition:</b> httpc.h:41</div></div>
+<div class="ttc" id="astructhttpc__tls__info__t_html_a2cf9c577de249c9a90d7b602ffe7f1de"><div class="ttname"><a href="structhttpc__tls__info__t.html#a2cf9c577de249c9a90d7b602ffe7f1de">httpc_tls_info_t::pk</a></div><div class="ttdeci">char * pk</div><div class="ttdef"><b>Definition:</b> httpc.h:44</div></div>
+<div class="ttc" id="astructhttpc__tls__info__t_html_a7812cf1d0a684b96e4e426562d4c54a0"><div class="ttname"><a href="structhttpc__tls__info__t.html#a7812cf1d0a684b96e4e426562d4c54a0">httpc_tls_info_t::pk_len</a></div><div class="ttdeci">uint32_t pk_len</div><div class="ttdef"><b>Definition:</b> httpc.h:45</div></div>
+<div class="ttc" id="astructhttpc__tls__info__t_html_aa103f5b45b340b7fa8506684dd5a5205"><div class="ttname"><a href="structhttpc__tls__info__t.html#aa103f5b45b340b7fa8506684dd5a5205">httpc_tls_info_t::cert</a></div><div class="ttdeci">char * cert</div><div class="ttdef"><b>Definition:</b> httpc.h:42</div></div>
+<div class="ttc" id="astructhttpc__tls__info__t_html_ae1baf947ebef6ed5212a6bb3d8e587a8"><div class="ttname"><a href="structhttpc__tls__info__t.html#ae1baf947ebef6ed5212a6bb3d8e587a8">httpc_tls_info_t::cert_len</a></div><div class="ttdeci">uint32_t cert_len</div><div class="ttdef"><b>Definition:</b> httpc.h:43</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="httpc_8h.html">httpc.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

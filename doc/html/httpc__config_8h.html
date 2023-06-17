@@ -1,0 +1,563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HFC: httpc_config.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HFC
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('httpc__config_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle">
+<div class="title">httpc_config.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;netdb.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;netinet/in.h&gt;</code><br />
+<code>#include &lt;arpa/inet.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+httpc_config.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="httpc__config_8h__incl.png" border="0" usemap="#ahttpc__config_8h" alt=""/></div>
+<map name="ahttpc__config_8h" id="ahttpc__config_8h">
+<area shape="rect" title=" " alt="" coords="523,5,637,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,72,107"/>
+<area shape="rect" title=" " alt="" coords="96,80,179,107"/>
+<area shape="rect" title=" " alt="" coords="203,80,274,107"/>
+<area shape="rect" title=" " alt="" coords="299,80,373,107"/>
+<area shape="rect" title=" " alt="" coords="397,80,472,107"/>
+<area shape="rect" title=" " alt="" coords="497,80,567,107"/>
+<area shape="rect" title=" " alt="" coords="592,80,667,107"/>
+<area shape="rect" title=" " alt="" coords="691,80,762,107"/>
+<area shape="rect" title=" " alt="" coords="787,80,883,107"/>
+<area shape="rect" title=" " alt="" coords="907,80,1010,107"/>
+<area shape="rect" title=" " alt="" coords="1035,80,1131,107"/>
+<area shape="rect" title=" " alt="" coords="1155,80,1247,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="httpc__config_8h__dep__incl.png" border="0" usemap="#ahttpc__config_8hdep" alt=""/></div>
+<map name="ahttpc__config_8hdep" id="ahttpc__config_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,119,32"/>
+<area shape="rect" href="httpc_8h.html" title=" " alt="" coords="29,80,95,107"/>
+<area shape="rect" href="httpc_8c.html" title=" " alt="" coords="29,155,95,181"/>
+</map>
+</div>
+</div>
+<p><a href="httpc__config_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a159ca84d25a5487d8e81e4438725df19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a159ca84d25a5487d8e81e4438725df19">LOG</a>&#160;&#160;&#160;printf</td></tr>
+<tr class="separator:a159ca84d25a5487d8e81e4438725df19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72dbcf6d0153db1b8d8a58001feed83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ad72dbcf6d0153db1b8d8a58001feed83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1103fea1e1b3c41ca3322d5389f7162"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#ae1103fea1e1b3c41ca3322d5389f7162">INFO</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ae1103fea1e1b3c41ca3322d5389f7162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271d8f7f52be750e5c744a394ec71344"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a271d8f7f52be750e5c744a394ec71344">WARN</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a271d8f7f52be750e5c744a394ec71344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe83ac76edc595f6b98cd4a4127aed5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a8fe83ac76edc595f6b98cd4a4127aed5">ERROR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a8fe83ac76edc595f6b98cd4a4127aed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06cfc686322558f590c50eab8622ebd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(fmt, ...)</td></tr>
+<tr class="separator:ac06cfc686322558f590c50eab8622ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69d735f8291bd2aff230fe6ffb4d4b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a>(fmt, ...)</td></tr>
+<tr class="separator:ae69d735f8291bd2aff230fe6ffb4d4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba1363ea408060eab75cb5a48dcb907"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#adba1363ea408060eab75cb5a48dcb907">LOG_WARN</a>(fmt, ...)</td></tr>
+<tr class="separator:adba1363ea408060eab75cb5a48dcb907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6fc70e87e424e7083c63696b8fb9e78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a>(fmt, ...)</td></tr>
+<tr class="separator:ae6fc70e87e424e7083c63696b8fb9e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81b3a410ad4b1c0f9a849fa190fe90d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#aa81b3a410ad4b1c0f9a849fa190fe90d">httpc_debug</a>&#160;&#160;&#160;<a class="el" href="httpc__config_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></td></tr>
+<tr class="separator:aa81b3a410ad4b1c0f9a849fa190fe90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec019c432dc20835c69d1d7e620f1e83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#aec019c432dc20835c69d1d7e620f1e83">httpc_info</a>&#160;&#160;&#160;<a class="el" href="httpc__config_8h.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a></td></tr>
+<tr class="separator:aec019c432dc20835c69d1d7e620f1e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3c7e51310559a8624e67fbee69aa902"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#af3c7e51310559a8624e67fbee69aa902">httpc_warn</a>&#160;&#160;&#160;<a class="el" href="httpc__config_8h.html#adba1363ea408060eab75cb5a48dcb907">LOG_WARN</a></td></tr>
+<tr class="separator:af3c7e51310559a8624e67fbee69aa902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5cd564aecfebb58e1f0393e47867b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a0c5cd564aecfebb58e1f0393e47867b5">httpc_error</a>&#160;&#160;&#160;<a class="el" href="httpc__config_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a></td></tr>
+<tr class="separator:a0c5cd564aecfebb58e1f0393e47867b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f0258063e65c667a401badf42342d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a85f0258063e65c667a401badf42342d9">httpc_malloc</a>&#160;&#160;&#160;malloc</td></tr>
+<tr class="separator:a85f0258063e65c667a401badf42342d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89259c87fc021bc632a482ef37fcbebc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a89259c87fc021bc632a482ef37fcbebc">httpc_calloc</a>&#160;&#160;&#160;calloc</td></tr>
+<tr class="separator:a89259c87fc021bc632a482ef37fcbebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f73674bc442ea92cdfb483c820c352c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a3f73674bc442ea92cdfb483c820c352c">httpc_free</a>&#160;&#160;&#160;free</td></tr>
+<tr class="separator:a3f73674bc442ea92cdfb483c820c352c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2b7a682109a6f2b00d6b6bf9493cbf2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#aa2b7a682109a6f2b00d6b6bf9493cbf2">safe_free</a>(p)</td></tr>
+<tr class="separator:aa2b7a682109a6f2b00d6b6bf9493cbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48ff699e6cd8e97350f5c5e6e48752f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#ab48ff699e6cd8e97350f5c5e6e48752f">HTTPC_CFG_ENABLE_MBEDTLS</a></td></tr>
+<tr class="separator:ab48ff699e6cd8e97350f5c5e6e48752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b9120b208c114d3dacbef5da1f989f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a22b9120b208c114d3dacbef5da1f989f">HTTPC_CFG_ENABLE_NGHTTP2</a></td></tr>
+<tr class="separator:a22b9120b208c114d3dacbef5da1f989f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a247adfca23ce7c251cbb71f672aa6916"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc__config_8h.html#a247adfca23ce7c251cbb71f672aa6916">HTTPC_CFG_SOCKET_TIMEOUT</a>&#160;&#160;&#160;(10)</td></tr>
+<tr class="separator:a247adfca23ce7c251cbb71f672aa6916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ad72dbcf6d0153db1b8d8a58001feed83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72dbcf6d0153db1b8d8a58001feed83">&#9670;&nbsp;</a></span>DEBUG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8fe83ac76edc595f6b98cd4a4127aed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe83ac76edc595f6b98cd4a4127aed5">&#9670;&nbsp;</a></span>ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89259c87fc021bc632a482ef37fcbebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89259c87fc021bc632a482ef37fcbebc">&#9670;&nbsp;</a></span>httpc_calloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define httpc_calloc&#160;&#160;&#160;calloc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab48ff699e6cd8e97350f5c5e6e48752f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48ff699e6cd8e97350f5c5e6e48752f">&#9670;&nbsp;</a></span>HTTPC_CFG_ENABLE_MBEDTLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HTTPC_CFG_ENABLE_MBEDTLS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Configuration Module 开启 MbedTLS </p>
+
+</div>
+</div>
+<a id="a22b9120b208c114d3dacbef5da1f989f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b9120b208c114d3dacbef5da1f989f">&#9670;&nbsp;</a></span>HTTPC_CFG_ENABLE_NGHTTP2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HTTPC_CFG_ENABLE_NGHTTP2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>开启 NGHTTP2 </p>
+
+</div>
+</div>
+<a id="a247adfca23ce7c251cbb71f672aa6916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a247adfca23ce7c251cbb71f672aa6916">&#9670;&nbsp;</a></span>HTTPC_CFG_SOCKET_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HTTPC_CFG_SOCKET_TIMEOUT&#160;&#160;&#160;(10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>接收和发送的超时时间, 单位秒 </p>
+
+</div>
+</div>
+<a id="aa81b3a410ad4b1c0f9a849fa190fe90d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81b3a410ad4b1c0f9a849fa190fe90d">&#9670;&nbsp;</a></span>httpc_debug</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define httpc_debug&#160;&#160;&#160;<a class="el" href="httpc__config_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c5cd564aecfebb58e1f0393e47867b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5cd564aecfebb58e1f0393e47867b5">&#9670;&nbsp;</a></span>httpc_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define httpc_error&#160;&#160;&#160;<a class="el" href="httpc__config_8h.html#ae6fc70e87e424e7083c63696b8fb9e78">LOG_ERROR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f73674bc442ea92cdfb483c820c352c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f73674bc442ea92cdfb483c820c352c">&#9670;&nbsp;</a></span>httpc_free</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define httpc_free&#160;&#160;&#160;free</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec019c432dc20835c69d1d7e620f1e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec019c432dc20835c69d1d7e620f1e83">&#9670;&nbsp;</a></span>httpc_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define httpc_info&#160;&#160;&#160;<a class="el" href="httpc__config_8h.html#ae69d735f8291bd2aff230fe6ffb4d4b3">LOG_INFO</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85f0258063e65c667a401badf42342d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f0258063e65c667a401badf42342d9">&#9670;&nbsp;</a></span>httpc_malloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define httpc_malloc&#160;&#160;&#160;malloc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Memory Manager </p>
+
+</div>
+</div>
+<a id="af3c7e51310559a8624e67fbee69aa902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3c7e51310559a8624e67fbee69aa902">&#9670;&nbsp;</a></span>httpc_warn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define httpc_warn&#160;&#160;&#160;<a class="el" href="httpc__config_8h.html#adba1363ea408060eab75cb5a48dcb907">LOG_WARN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1103fea1e1b3c41ca3322d5389f7162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1103fea1e1b3c41ca3322d5389f7162">&#9670;&nbsp;</a></span>INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INFO&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a159ca84d25a5487d8e81e4438725df19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159ca84d25a5487d8e81e4438725df19">&#9670;&nbsp;</a></span>LOG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG&#160;&#160;&#160;printf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Debug Module </p>
+
+</div>
+</div>
+<a id="ac06cfc686322558f590c50eab8622ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06cfc686322558f590c50eab8622ebd">&#9670;&nbsp;</a></span>LOG_DEBUG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_DEBUG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                                           \</div>
+<div class="line">        LOG(<span class="stringliteral">&quot;\033[37m[%s:%d]&quot;</span> fmt <span class="stringliteral">&quot;\033[0m\n&quot;</span>, __func__, __LINE__, ##__VA_ARGS__); \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae6fc70e87e424e7083c63696b8fb9e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6fc70e87e424e7083c63696b8fb9e78">&#9670;&nbsp;</a></span>LOG_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ERROR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                                           \</div>
+<div class="line">        LOG(<span class="stringliteral">&quot;\033[31m[%s:%d]&quot;</span> fmt <span class="stringliteral">&quot;\033[0m\n&quot;</span>, __func__, __LINE__, ##__VA_ARGS__); \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae69d735f8291bd2aff230fe6ffb4d4b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69d735f8291bd2aff230fe6ffb4d4b3">&#9670;&nbsp;</a></span>LOG_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_INFO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                                           \</div>
+<div class="line">        LOG(<span class="stringliteral">&quot;\033[32m[%s:%d]&quot;</span> fmt <span class="stringliteral">&quot;\033[0m\n&quot;</span>, __func__, __LINE__, ##__VA_ARGS__); \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adba1363ea408060eab75cb5a48dcb907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba1363ea408060eab75cb5a48dcb907">&#9670;&nbsp;</a></span>LOG_WARN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_WARN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                                           \</div>
+<div class="line">        LOG(<span class="stringliteral">&quot;\033[33m[%s:%d]&quot;</span> fmt <span class="stringliteral">&quot;\033[0m\n&quot;</span>, __func__, __LINE__, ##__VA_ARGS__); \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa2b7a682109a6f2b00d6b6bf9493cbf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2b7a682109a6f2b00d6b6bf9493cbf2">&#9670;&nbsp;</a></span>safe_free</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define safe_free</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                   \</div>
+<div class="line">        if (p) {           \</div>
+<div class="line">            httpc_free(p); \</div>
+<div class="line">            p = <a class="code" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;      \</div>
+<div class="line">        }                  \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="ahttpc_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> httpc.h:17</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a271d8f7f52be750e5c744a394ec71344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271d8f7f52be750e5c744a394ec71344">&#9670;&nbsp;</a></span>WARN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WARN&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="httpc__config_8h.html">httpc_config.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

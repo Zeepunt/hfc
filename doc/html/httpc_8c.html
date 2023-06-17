@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HFC: httpc.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HFC
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('httpc_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">httpc.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="httpc_8h_source.html">httpc.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+httpc.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="httpc_8c__incl.png" border="0" usemap="#ahttpc_8c" alt=""/></div>
+<map name="ahttpc_8c" id="ahttpc_8c">
+<area shape="rect" title=" " alt="" coords="1056,5,1123,32"/>
+<area shape="rect" title=" " alt="" coords="1014,80,1077,107"/>
+<area shape="rect" href="httpc_8h.html" title=" " alt="" coords="1101,80,1168,107"/>
+<area shape="rect" href="httpc__config_8h.html" title=" " alt="" coords="523,155,637,181"/>
+<area shape="rect" title=" " alt="" coords="661,155,829,181"/>
+<area shape="rect" title=" " alt="" coords="853,155,963,181"/>
+<area shape="rect" title=" " alt="" coords="987,155,1133,181"/>
+<area shape="rect" title=" " alt="" coords="1157,155,1264,181"/>
+<area shape="rect" title=" " alt="" coords="1288,155,1427,181"/>
+<area shape="rect" title=" " alt="" coords="1451,155,1595,181"/>
+<area shape="rect" title=" " alt="" coords="1619,155,1757,181"/>
+<area shape="rect" title=" " alt="" coords="5,229,72,256"/>
+<area shape="rect" title=" " alt="" coords="96,229,179,256"/>
+<area shape="rect" title=" " alt="" coords="203,229,274,256"/>
+<area shape="rect" title=" " alt="" coords="299,229,373,256"/>
+<area shape="rect" title=" " alt="" coords="397,229,472,256"/>
+<area shape="rect" title=" " alt="" coords="497,229,567,256"/>
+<area shape="rect" title=" " alt="" coords="592,229,667,256"/>
+<area shape="rect" title=" " alt="" coords="691,229,762,256"/>
+<area shape="rect" title=" " alt="" coords="787,229,883,256"/>
+<area shape="rect" title=" " alt="" coords="907,229,1010,256"/>
+<area shape="rect" title=" " alt="" coords="1035,229,1131,256"/>
+<area shape="rect" title=" " alt="" coords="1155,229,1247,256"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a5a00c9969845b7f23028da1801b008ba"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#a5a00c9969845b7f23028da1801b008ba">httpc_header_get</a> (<a class="el" href="structhttpc__t.html">httpc_t</a> *httpc, const char *fields)</td></tr>
+<tr class="memdesc:a5a00c9969845b7f23028da1801b008ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据关键字从响应中找出对应的数据  <a href="httpc_8c.html#a5a00c9969845b7f23028da1801b008ba">更多...</a><br /></td></tr>
+<tr class="separator:a5a00c9969845b7f23028da1801b008ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c0b7c65a0a217cad96faf2d8701f64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#a49c0b7c65a0a217cad96faf2d8701f64">httpc_header_set</a> (<a class="el" href="structhttpc__t.html">httpc_t</a> *httpc, const char *fmt,...)</td></tr>
+<tr class="memdesc:a49c0b7c65a0a217cad96faf2d8701f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">自定义填充头部缓冲区  <a href="httpc_8c.html#a49c0b7c65a0a217cad96faf2d8701f64">更多...</a><br /></td></tr>
+<tr class="separator:a49c0b7c65a0a217cad96faf2d8701f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a543403343f5b64ddca509ad9bcc54ff9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#a543403343f5b64ddca509ad9bcc54ff9">httpc_handle_response</a> (<a class="el" href="structhttpc__t.html">httpc_t</a> *httpc)</td></tr>
+<tr class="memdesc:a543403343f5b64ddca509ad9bcc54ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理从服务器接收到的数据: 获得响应的报文头部, 但不包括响应的报文主体  <a href="httpc_8c.html#a543403343f5b64ddca509ad9bcc54ff9">更多...</a><br /></td></tr>
+<tr class="separator:a543403343f5b64ddca509ad9bcc54ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb8e9b18749a368853f241469d8e01e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#abdb8e9b18749a368853f241469d8e01e">httpc_send_request</a> (<a class="el" href="structhttpc__t.html">httpc_t</a> *httpc, char *send_buf, int send_size)</td></tr>
+<tr class="memdesc:abdb8e9b18749a368853f241469d8e01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送 HTTP 请求, 并且接收和解析响应报文的头部信息  <a href="httpc_8c.html#abdb8e9b18749a368853f241469d8e01e">更多...</a><br /></td></tr>
+<tr class="separator:abdb8e9b18749a368853f241469d8e01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729783fc3ed30412c879a5b064f56451"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#a729783fc3ed30412c879a5b064f56451">httpc_recv_response</a> (<a class="el" href="structhttpc__t.html">httpc_t</a> *httpc, <a class="el" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5">httpc_mode_t</a> mode, char *buf, int size)</td></tr>
+<tr class="memdesc:a729783fc3ed30412c879a5b064f56451"><td class="mdescLeft">&#160;</td><td class="mdescRight">接收 HTTP 响应报文的主体数据  <a href="httpc_8c.html#a729783fc3ed30412c879a5b064f56451">更多...</a><br /></td></tr>
+<tr class="separator:a729783fc3ed30412c879a5b064f56451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1627740c64f005340ab0a7aeec00f7dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structhttpc__t.html">httpc_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#a1627740c64f005340ab0a7aeec00f7dd">httpc_init</a> (const char *uri, char *port, <a class="el" href="structhttpc__mem__node__t.html">httpc_mem_node_t</a> *node, <a class="el" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011">httpc_ver_t</a> version, <a class="el" href="structhttpc__tls__info__t.html">httpc_tls_info_t</a> *ssl_info)</td></tr>
+<tr class="memdesc:a1627740c64f005340ab0a7aeec00f7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP Client 初始化  <a href="httpc_8c.html#a1627740c64f005340ab0a7aeec00f7dd">更多...</a><br /></td></tr>
+<tr class="separator:a1627740c64f005340ab0a7aeec00f7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0e8504bb00ceecc037ef20fde54bf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#a8a0e8504bb00ceecc037ef20fde54bf5">httpc_deinit</a> (<a class="el" href="structhttpc__t.html">httpc_t</a> *httpc)</td></tr>
+<tr class="memdesc:a8a0e8504bb00ceecc037ef20fde54bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP Client 销毁  <a href="httpc_8c.html#a8a0e8504bb00ceecc037ef20fde54bf5">更多...</a><br /></td></tr>
+<tr class="separator:a8a0e8504bb00ceecc037ef20fde54bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95e7361d32f8242cb437a371783f394f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#a95e7361d32f8242cb437a371783f394f">httpc2_submit_request</a> (<a class="el" href="structhttpc2__t.html">httpc2_t</a> *httpc2, const nghttp2_nv *nva, size_t nva_len, <a class="el" href="httpc_8h.html#a6c49f3bbe520c608159235e55352dafe">httpc2_read_from_user_t</a> read_callback, <a class="el" href="httpc_8h.html#adcd6962e23fb84f6b7ee479dea8caa58">httpc2_write_to_user_t</a> write_callback)</td></tr>
+<tr class="memdesc:a95e7361d32f8242cb437a371783f394f"><td class="mdescLeft">&#160;</td><td class="mdescRight">提交一个 HTTP/2 请求  <a href="httpc_8c.html#a95e7361d32f8242cb437a371783f394f">更多...</a><br /></td></tr>
+<tr class="separator:a95e7361d32f8242cb437a371783f394f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab968562f4f8639bb123a7b8999d48e00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#ab968562f4f8639bb123a7b8999d48e00">httpc2_core_run</a> (<a class="el" href="structhttpc2__t.html">httpc2_t</a> *httpc2)</td></tr>
+<tr class="memdesc:ab968562f4f8639bb123a7b8999d48e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">运行一次 HTTP/2 的发送/接收操作  <a href="httpc_8c.html#ab968562f4f8639bb123a7b8999d48e00">更多...</a><br /></td></tr>
+<tr class="separator:ab968562f4f8639bb123a7b8999d48e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c43ecd15d3a747d43909fcbe6dee3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structhttpc2__t.html">httpc2_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#a79c43ecd15d3a747d43909fcbe6dee3b">httpc2_init</a> (const char *uri, char *port, <a class="el" href="structhttpc__tls__info__t.html">httpc_tls_info_t</a> *ssl_info)</td></tr>
+<tr class="memdesc:a79c43ecd15d3a747d43909fcbe6dee3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP/2 Client 初始化  <a href="httpc_8c.html#a79c43ecd15d3a747d43909fcbe6dee3b">更多...</a><br /></td></tr>
+<tr class="separator:a79c43ecd15d3a747d43909fcbe6dee3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4f392a2100a59d31d4ffa474e78b65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpc_8c.html#afc4f392a2100a59d31d4ffa474e78b65">httpc2_deinit</a> (<a class="el" href="structhttpc2__t.html">httpc2_t</a> *httpc2)</td></tr>
+<tr class="memdesc:afc4f392a2100a59d31d4ffa474e78b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP/2 Client 销毁  <a href="httpc_8c.html#afc4f392a2100a59d31d4ffa474e78b65">更多...</a><br /></td></tr>
+<tr class="separator:afc4f392a2100a59d31d4ffa474e78b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="ab968562f4f8639bb123a7b8999d48e00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab968562f4f8639bb123a7b8999d48e00">&#9670;&nbsp;</a></span>httpc2_core_run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int httpc2_core_run </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc2__t.html">httpc2_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>运行一次 HTTP/2 的发送/接收操作 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc2</td><td>HTTP/2 Client </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>参考 HTTPC_ERR_XXX 状态码 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>1. nghttp2 的 socket 是不阻塞的, 所以该函数不会阻塞 </dd>
+<dd>
+2. 由于是只运行一次, 需要调用者不断调用, 以确保正常的发送接收 </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="httpc_8h.html#ab34afc305d5fb225bfe445350e5b24dd">HTTPC_ERR_FAIL</a>, <a class="el" href="httpc_8h.html#a1866f433fbbefecf1600136f5a662783">HTTPC_ERR_OK</a>, <a class="el" href="httpc_8h.html#ae15a7cf1dcea8783b0a8f7bd5cb81b8e">HTTPC_ERR_PARAM</a>, <a class="el" href="httpc__config_8h.html#a0c5cd564aecfebb58e1f0393e47867b5">httpc_error</a>, <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> , 以及 <a class="el" href="structhttpc2__t.html#ae1921ca282c2dfd1140f05c4ab47fab5">httpc2_t::session</a>.</p>
+
+</div>
+</div>
+<a id="afc4f392a2100a59d31d4ffa474e78b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4f392a2100a59d31d4ffa474e78b65">&#9670;&nbsp;</a></span>httpc2_deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void httpc2_deinit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc2__t.html">httpc2_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HTTP/2 Client 销毁 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc2</td><td>初始化得到的 HTTP/2 Client </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>销毁后需要将 httpc2 置为 NULL </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="structhttpc2__t.html#ac469cde082b26665d435d4f1aecc52c7">httpc2_t::httpc</a>, <a class="el" href="httpc_8c.html#a8a0e8504bb00ceecc037ef20fde54bf5">httpc_deinit()</a>, <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <a class="el" href="httpc__config_8h.html#aa2b7a682109a6f2b00d6b6bf9493cbf2">safe_free</a> , 以及 <a class="el" href="structhttpc2__t.html#ae1921ca282c2dfd1140f05c4ab47fab5">httpc2_t::session</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="httpc_8c_afc4f392a2100a59d31d4ffa474e78b65_cgraph.png" border="0" usemap="#ahttpc_8c_afc4f392a2100a59d31d4ffa474e78b65_cgraph" alt=""/></div>
+<map name="ahttpc_8c_afc4f392a2100a59d31d4ffa474e78b65_cgraph" id="ahttpc_8c_afc4f392a2100a59d31d4ffa474e78b65_cgraph">
+<area shape="rect" title="HTTP/2 Client 销毁" alt="" coords="5,5,112,32"/>
+<area shape="rect" href="httpc_8c.html#a8a0e8504bb00ceecc037ef20fde54bf5" title="HTTP Client 销毁" alt="" coords="160,5,259,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a79c43ecd15d3a747d43909fcbe6dee3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79c43ecd15d3a747d43909fcbe6dee3b">&#9670;&nbsp;</a></span>httpc2_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structhttpc2__t.html">httpc2_t</a>* httpc2_init </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structhttpc__tls__info__t.html">httpc_tls_info_t</a> *&#160;</td>
+          <td class="paramname"><em>ssl_info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HTTP/2 Client 初始化 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uri</td><td>所要访问的资源地址 </td></tr>
+    <tr><td class="paramname">port</td><td>指定连接的端口 </td></tr>
+    <tr><td class="paramname">ssl_info</td><td>证书信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>NULL:初始化失败, 否则成功 </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="httpc__config_8h.html#a89259c87fc021bc632a482ef37fcbebc">httpc_calloc</a>, <a class="el" href="httpc__config_8h.html#a0c5cd564aecfebb58e1f0393e47867b5">httpc_error</a> , 以及 <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>.</p>
+
+</div>
+</div>
+<a id="a95e7361d32f8242cb437a371783f394f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95e7361d32f8242cb437a371783f394f">&#9670;&nbsp;</a></span>httpc2_submit_request()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int httpc2_submit_request </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc2__t.html">httpc2_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nghttp2_nv *&#160;</td>
+          <td class="paramname"><em>nva</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nva_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="httpc_8h.html#a6c49f3bbe520c608159235e55352dafe">httpc2_read_from_user_t</a>&#160;</td>
+          <td class="paramname"><em>read_callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="httpc_8h.html#adcd6962e23fb84f6b7ee479dea8caa58">httpc2_write_to_user_t</a>&#160;</td>
+          <td class="paramname"><em>write_callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>提交一个 HTTP/2 请求 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc2</td><td>HTTP/2 Client </td></tr>
+    <tr><td class="paramname">nva</td><td>HTTP/2 头部字段数组 </td></tr>
+    <tr><td class="paramname">nva_len</td><td>数组大小 </td></tr>
+    <tr><td class="paramname">read_callback</td><td>所需要发送的数据 </td></tr>
+    <tr><td class="paramname">write_callbck</td><td>保存接收到的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>&lt;=0:失败, 否则返回所创建的 stream id </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>1. 该函数会创建一个新的 stream, 所发送的 HEADERS 帧是由 nva 参数决定的, 所发送的 DATA 帧是由 read_callback 函数决定的 </dd>
+<dd>
+2. 该函数只是将 HEADERS 和 DATA 帧保存到 nghttp2 的内部缓冲区, 并不是真正的发送函数 </dd></dl>
+<p>通过传进来的 nghttp2_nv 结构体, nghttp2 知道 HEADERS 帧的内容和大小 但是如果要发送 DATA 帧的话, nghttp2 需要从外界获取相应的数据 nghttp2_data_provider 结构体就是告诉 nghttp2 如何从外界获取数据, 并保存到 nghttp2 内部缓冲区中</p>
+
+<p class="reference">引用了 <a class="el" href="httpc__config_8h.html#a0c5cd564aecfebb58e1f0393e47867b5">httpc_error</a>, <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> , 以及 <a class="el" href="structhttpc2__t.html#a5cf671c99c5829ad48e8513bcb0a930a">httpc2_t::write_callback</a>.</p>
+
+</div>
+</div>
+<a id="a8a0e8504bb00ceecc037ef20fde54bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0e8504bb00ceecc037ef20fde54bf5">&#9670;&nbsp;</a></span>httpc_deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void httpc_deinit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc__t.html">httpc_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HTTP Client 销毁 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc</td><td>初始化得到的 HTTP Client </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>销毁后需要将 httpc 置为 NULL </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="structhttpc__t.html#a68fdcf4fbfa70afd7b5f6f5f5056a9b1">httpc_t::enable_mbedtls</a> , 以及 <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="httpc_8c.html#afc4f392a2100a59d31d4ffa474e78b65">httpc2_deinit()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="httpc_8c_a8a0e8504bb00ceecc037ef20fde54bf5_icgraph.png" border="0" usemap="#ahttpc_8c_a8a0e8504bb00ceecc037ef20fde54bf5_icgraph" alt=""/></div>
+<map name="ahttpc_8c_a8a0e8504bb00ceecc037ef20fde54bf5_icgraph" id="ahttpc_8c_a8a0e8504bb00ceecc037ef20fde54bf5_icgraph">
+<area shape="rect" title="HTTP Client 销毁" alt="" coords="160,5,259,32"/>
+<area shape="rect" href="httpc_8c.html#afc4f392a2100a59d31d4ffa474e78b65" title="HTTP/2 Client 销毁" alt="" coords="5,5,112,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a543403343f5b64ddca509ad9bcc54ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a543403343f5b64ddca509ad9bcc54ff9">&#9670;&nbsp;</a></span>httpc_handle_response()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int httpc_handle_response </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc__t.html">httpc_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>处理从服务器接收到的数据: 获得响应的报文头部, 但不包括响应的报文主体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc</td><td>HTTP Client 对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>参考 HTTPC_ERR_XXX 状态码 </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="structhttpc__mem__node__t.html#a1fe855c208bc17a51a4d34fefdb2d5b1">httpc_mem_node_t::buf</a>, <a class="el" href="structhttpc__t.html#a098b93d20b1c1a679aa881fb02a7cca1">httpc_t::header_node</a>, <a class="el" href="httpc_8h.html#a1866f433fbbefecf1600136f5a662783">HTTPC_ERR_OK</a>, <a class="el" href="httpc_8h.html#ae15a7cf1dcea8783b0a8f7bd5cb81b8e">HTTPC_ERR_PARAM</a> , 以及 <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>.</p>
+
+</div>
+</div>
+<a id="a5a00c9969845b7f23028da1801b008ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a00c9969845b7f23028da1801b008ba">&#9670;&nbsp;</a></span>httpc_header_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* httpc_header_get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc__t.html">httpc_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fields</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>根据关键字从响应中找出对应的数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc</td><td>HTTP Client 对象 </td></tr>
+    <tr><td class="paramname">fields</td><td>关键字 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>NULL:失败, 否则成功 </dd></dl>
+<p>由于接收的响应数据经过处理, 即用 '\0' 代替了 "\r\n" 所以这里需要循环处理多个字符串</p>
+
+<p class="reference">引用了 <a class="el" href="structhttpc__mem__node__t.html#a1fe855c208bc17a51a4d34fefdb2d5b1">httpc_mem_node_t::buf</a>, <a class="el" href="structhttpc__t.html#a098b93d20b1c1a679aa881fb02a7cca1">httpc_t::header_node</a>, <a class="el" href="httpc__config_8h.html#a0c5cd564aecfebb58e1f0393e47867b5">httpc_error</a> , 以及 <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>.</p>
+
+</div>
+</div>
+<a id="a49c0b7c65a0a217cad96faf2d8701f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c0b7c65a0a217cad96faf2d8701f64">&#9670;&nbsp;</a></span>httpc_header_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int httpc_header_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc__t.html">httpc_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>自定义填充头部缓冲区 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc</td><td>HTTP Client 对象 </td></tr>
+    <tr><td class="paramname">fmt</td><td>填充的参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>HTTPC_ERR_FAIL:失败, HTTPC_ERR_PARAM:无效参数, 否则成功 </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="structhttpc__mem__node__t.html#a1fe855c208bc17a51a4d34fefdb2d5b1">httpc_mem_node_t::buf</a>, <a class="el" href="structhttpc__mem__node__t.html#a7666bbf00997cc13da27d55cb05d27c4">httpc_mem_node_t::buf_len</a>, <a class="el" href="structhttpc__mem__node__t.html#acec2350cc89da3f118446c42b4e79608">httpc_mem_node_t::buf_used</a>, <a class="el" href="structhttpc__t.html#a098b93d20b1c1a679aa881fb02a7cca1">httpc_t::header_node</a>, <a class="el" href="httpc_8h.html#ab34afc305d5fb225bfe445350e5b24dd">HTTPC_ERR_FAIL</a>, <a class="el" href="httpc_8h.html#ae15a7cf1dcea8783b0a8f7bd5cb81b8e">HTTPC_ERR_PARAM</a>, <a class="el" href="httpc__config_8h.html#af3c7e51310559a8624e67fbee69aa902">httpc_warn</a> , 以及 <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>.</p>
+
+</div>
+</div>
+<a id="a1627740c64f005340ab0a7aeec00f7dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1627740c64f005340ab0a7aeec00f7dd">&#9670;&nbsp;</a></span>httpc_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structhttpc__t.html">httpc_t</a>* httpc_init </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structhttpc__mem__node__t.html">httpc_mem_node_t</a> *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011">httpc_ver_t</a>&#160;</td>
+          <td class="paramname"><em>version</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structhttpc__tls__info__t.html">httpc_tls_info_t</a> *&#160;</td>
+          <td class="paramname"><em>ssl_info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HTTP Client 初始化 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uri</td><td>所要访问的资源地址 </td></tr>
+    <tr><td class="paramname">port</td><td>指定连接的端口 </td></tr>
+    <tr><td class="paramname">node</td><td>外部提供的头部缓冲区 </td></tr>
+    <tr><td class="paramname">version</td><td>HTTP 协议版本 </td></tr>
+    <tr><td class="paramname">ssl_info</td><td>证书信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>NULL:初始化失败, 否则成功 </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="httpc_8h.html#abf791281ee000e9f7e7da16cbc579011a9bb55bc81c30796d8f394db82144b5d1">HTTP_VER_1_1</a>, <a class="el" href="httpc__config_8h.html#a89259c87fc021bc632a482ef37fcbebc">httpc_calloc</a>, <a class="el" href="httpc__config_8h.html#a247adfca23ce7c251cbb71f672aa6916">HTTPC_CFG_SOCKET_TIMEOUT</a>, <a class="el" href="httpc_8h.html#ab34afc305d5fb225bfe445350e5b24dd">HTTPC_ERR_FAIL</a>, <a class="el" href="httpc__config_8h.html#a0c5cd564aecfebb58e1f0393e47867b5">httpc_error</a>, <a class="el" href="httpc__config_8h.html#af3c7e51310559a8624e67fbee69aa902">httpc_warn</a>, <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> , 以及 <a class="el" href="structhttpc__t.html#a3666576f6b88007cc7b8f26c7da596c8">httpc_t::socket</a>.</p>
+
+</div>
+</div>
+<a id="a729783fc3ed30412c879a5b064f56451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729783fc3ed30412c879a5b064f56451">&#9670;&nbsp;</a></span>httpc_recv_response()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int httpc_recv_response </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc__t.html">httpc_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5">httpc_mode_t</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>接收 HTTP 响应报文的主体数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc</td><td>HTTP Client 对象 </td></tr>
+    <tr><td class="paramname">mode</td><td>接收的模式 </td></tr>
+    <tr><td class="paramname">buf</td><td>接收数据的缓冲区 </td></tr>
+    <tr><td class="paramname">size</td><td>缓冲区的大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>参考 HTTPC_ERR_XXX 状态码 </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="httpc_8h.html#ab34afc305d5fb225bfe445350e5b24dd">HTTPC_ERR_FAIL</a>, <a class="el" href="httpc_8h.html#ae15a7cf1dcea8783b0a8f7bd5cb81b8e">HTTPC_ERR_PARAM</a>, <a class="el" href="httpc_8h.html#ab178b02f1af5c074ba6c085c8a7afcf5a0758d4c0662398383536eeddd0eb6f95">HTTPC_MODE_NORMAL</a> , 以及 <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>.</p>
+
+</div>
+</div>
+<a id="abdb8e9b18749a368853f241469d8e01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb8e9b18749a368853f241469d8e01e">&#9670;&nbsp;</a></span>httpc_send_request()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int httpc_send_request </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhttpc__t.html">httpc_t</a> *&#160;</td>
+          <td class="paramname"><em>httpc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>send_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>send_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>发送 HTTP 请求, 并且接收和解析响应报文的头部信息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpc</td><td>HTTP Client 对象 </td></tr>
+    <tr><td class="paramname">send_buf</td><td>发送数据的缓冲区, 可为 NULL </td></tr>
+    <tr><td class="paramname">send_size</td><td>缓冲区的大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>参考 HTTPC_ERR_XXX 状态码 </dd></dl>
+
+<p class="reference">引用了 <a class="el" href="httpc_8h.html#ab34afc305d5fb225bfe445350e5b24dd">HTTPC_ERR_FAIL</a>, <a class="el" href="httpc_8h.html#ae15a7cf1dcea8783b0a8f7bd5cb81b8e">HTTPC_ERR_PARAM</a> , 以及 <a class="el" href="httpc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="httpc_8c.html">httpc.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
