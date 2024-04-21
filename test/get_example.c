@@ -114,70 +114,6 @@ int httpc_get_position(httpc_t *httpc, int start, int end)
     httpc_header_set(httpc, "\r\n");
 }
 
-void normal_get_request(void)
-{
-    char *recv_buf = NULL;
-    
-    httpc_t *httpc = NULL;
-    
-    recv_buf = calloc(1, BUF_SIZE);
-    if (NULL == recv_buf)
-        goto end;   
-
-    httpc_mem_node_t node;
-    node.buf_len = HEADER_BUF_SIZE;
-    node.buf = calloc(1, BUF_SIZE);
-    if (NULL == node.buf)
-        goto end;
-    node.buf_used = 0;
-
-    httpc = httpc_init(TEST_URL, "80", &node, HTTP_VER_1_1, NULL);
-
-    httpc_get(httpc);
-
-    httpc_recv_response(httpc, HTTPC_MODE_NORMAL, recv_buf, BUF_SIZE);
-    printf("recv : %s\n.", recv_buf);
-
-end:
-    if (NULL != node.buf)
-        free(node.buf);
-    if (NULL != recv_buf)
-        free(recv_buf);
-    httpc_deinit(httpc);
-}
-
-void normal_get_request_with_ssl(void)
-{
-    char *recv_buf = NULL;
-    
-    httpc_t *httpc = NULL;
-    
-    recv_buf = calloc(1, BUF_SIZE);
-    if (NULL == recv_buf)
-        goto end;   
-
-    httpc_mem_node_t node;
-    node.buf_len = HEADER_BUF_SIZE;
-    node.buf = calloc(1, BUF_SIZE);
-    if (NULL == node.buf)
-        goto end;
-    node.buf_used = 0;
-
-    httpc = httpc_init(TEST_URL_WITH_SSL, "443", &node, HTTP_VER_1_1, NULL);
-
-    httpc_get(httpc);
-
-    httpc_recv_response(httpc, HTTPC_MODE_NORMAL, recv_buf, BUF_SIZE);
-    printf("recv : %s\n.", recv_buf);
-
-end:
-    if (NULL != node.buf)
-        free(node.buf);
-    if (NULL != recv_buf)
-        free(recv_buf);
-    httpc_deinit(httpc);
-}
-
 void normal_get_request_with_ca(void)
 {
     char *recv_buf = NULL;
@@ -309,11 +245,10 @@ end:
 
 void print_usage(void)
 {
-    printf("usage: get_example normal.\n");
-    printf("       get_example chunk.\n");
-    printf("       get_example range.\n");
-    printf("       get_example normal_with_ssl.\n");
-    printf("       get_example normal_with_ca.\n");
+    printf("usage:\n");
+    printf("get_example chunk.\n");
+    printf("get_example range.\n");
+    printf("get_example normal_with_ca.\n");
 }
 
 int main(int argc, char *argv[])
@@ -323,17 +258,11 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    if (0 == strcmp(argv[1], "normal")) {
-        normal_get_request();
-        return 0;
-    } else if (0 == strcmp(argv[1], "chunk")) {
+    if (0 == strcmp(argv[1], "chunk")) {
         chunk_get_request();
         return 0;
     } else if (0 == strcmp(argv[1], "range")) {
         range_get_request();
-        return 0;
-    } else if (0 == strcmp(argv[1], "normal_with_ssl")) {
-        normal_get_request_with_ssl();
         return 0;
     } else if (0 == strcmp(argv[1], "normal_with_ca")) {
         normal_get_request_with_ca();

@@ -3,33 +3,24 @@
   - 支持 SSL/TLS 协议。
   - 可自定义请求，当前已测试的请求类型: GET、POST。
 
-## 二、编译环境
+## 二、编译
 
-该项目使用的构建工具为 `xmake`。下面示例所使用的环境为 Ubuntu 22.04。
-
-### 1、安装 xmake
-
-[xmake 官方安装文档](https://xmake.io/#/zh-cn/guide/installation)。
+该项目使用的构建工具为 `cmake`。下面示例所使用的环境为 Ubuntu 22.04。
 
 ```shell
-curl -fsSL https://xmake.io/shget.text | bash
-source ~/.xmake/profile
-```
+# 安装
+sudo apt install cmake
+sudo apt install ninja-build
 
-### 2、编译和执行
-
-```shell
 # 编译
-cd <你的路径>/hfc
-xmake
+cmake -G Ninja -B build -D CMAKE_BUILD_TYPE=Debug
+cmake --build build
 
-# 执行 example
-xmake run get_example <参数>
-xmake run post_example <参数>
-xmake run httpc2_example <参数>
+# 测试
+./build/hfc_test
 ```
 
-### 3、文档生成
+## 三、文档生成
 
 使用 `doxygen` 来生成文档。
 
@@ -42,14 +33,14 @@ cd src
 doxygen
 ```
 
-## 三、如何移植
+## 四、如何移植
 
 该项目使用 `POSIX` 标准的接口和 `C` 标准库接口。下面的主要移植步骤： 
 
 1. 将 `hfc` 目录下的文件包含到项目中。
 2. 修改 `src/httpc_config.h` 文件。
 
-## 四、错误排查
+## 五、错误排查
 
 使用的测试环境为 `Ubuntu`。
 
