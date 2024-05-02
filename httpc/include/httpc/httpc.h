@@ -1,7 +1,7 @@
 /*
  * @Author       : Zeepunt
  * @Date         : 2023-06-17
- * @LastEditTime : 2023-06-17
+ * @LastEditTime : 2024-05-02
  *  
  * Gitee : https://gitee.com/zeepunt
  * Github: https://github.com/zeepunt
@@ -25,6 +25,7 @@
 #define HTTPC_ERR_PARAM (-2) /**< 参数错误 */
 #define HTTPC_ERR_MEM   (-3) /**< 内存错误 */
 #define HTTPC_ERR_SEND  (-4) /**< 发送数据失败 */
+#define HTTPC_ERR_RST   (-5) /**< socket 状态为 RST */
 
 typedef enum _http_client_mode {
     HTTPC_MODE_UNKONW = 0,
@@ -130,6 +131,13 @@ int httpc_send_request(httpc_t *httpc, char *send_buf, int send_size);
  * @return 参考 HTTPC_ERR_XXX 状态码
  */
 int httpc_recv_response(httpc_t *httpc, httpc_mode_t mode, char *buf, int size);
+
+/**
+ * @brief  获取 HTTP 当前的连接状态
+ * @param  httpc HTTP Client 对象
+ * @return 参考 HTTPC_ERR_XXX 状态码
+ */
+int httpc_connection_status_get(httpc_t *httpc);
 
 /**
  * @brief  HTTP Client 初始化

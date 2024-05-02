@@ -1,7 +1,7 @@
 /*
  * @Author       : Zeepunt
  * @Date         : 2023-06-17
- * @LastEditTime : 2024-04-21
+ * @LastEditTime : 2024-05-02
  *  
  * Gitee : https://gitee.com/zeepunt
  * Github: https://github.com/zeepunt
@@ -109,6 +109,60 @@ static void httpc_mem_node_reset(httpc_mem_node_t *node)
 }
 
 /**
+ * @brief  检查当前的 uri 是否为 IPv4 地址
+ * @param  uri 请求的资源地址
+ * @param  addr 当前的地址信息
+ * @return 参考 HTTPC_ERR_XXX 状态码
+ */
+static int httpc_ipv4_address_check(char *uri, char *addr, char *port)
+{
+    int ret = HTTPC_ERR_OK;
+
+    if (NULL == uri) {
+        ret = HTTPC_ERR_PARAM;
+        goto exit;
+    }
+
+    int index = 0;
+    char *spilt = NULL;
+    char *ptr = NULL;
+
+    char ip_addr[24] = {0};
+    ptr = strstr(uri, ":");
+    if (NULL != ptr) {
+        strncpy(ip_addr, uri, ptr - uri);
+        ptr += 1;
+        strncpy(port, ptr, strlen(ptr));
+    } else {
+        strncpy(ip_addr, uri, strlen(uri));
+    }
+    strncpy(addr, ip_addr, strlen(ip_addr));
+    httpc_debug("cur uri: %s, port: %s.", addr, port);
+
+    ptr = NULL;
+    spilt = strtok_r(ip_addr, ".", &ptr);
+    while (NULL != spilt) {
+        // httpc_debug("cur split: %s.", spilt);
+        ret = atoi(spilt);
+        if ((ret < 0) || (ret > 255)) {
+            break;
+        }
+        spilt = strtok_r(NULL, ".", &ptr);
+        index++;
+    }
+    // httpc_debug("cur index: %d.", index);
+
+    if (4 == index) {
+        ret = HTTPC_ERR_OK;
+    } else {
+        ret = HTTPC_ERR_FAIL;
+    }
+
+exit:
+    return ret;
+}
+
+/**
  * @brief  解析 uri
  * @param  httpc HTTP Client 对象
  * @param  uri 请求的资源地址
@@ -183,36 +237,64 @@ static int httpc_parse_uri(httpc_t *httpc, char *uri, char *port)
     snprintf(httpc->path, len, "%s", (NULL == path_ptr) ? "/" : path_ptr);
     httpc_debug("path: %s.", httpc->path);
 
-    /* 通过 DNS 找到主机地址对应的 IP 地址并连接 */
-    struct addrinfo hints;
-    struct addrinfo *result = NULL;
-    struct addrinfo *cur = NULL;
+    char ipv4_addr[24] = {0};
+    char ipv4_port[12] = {0};
 
-    memset(&hints, 0, sizeof(struct addrinfo));
-    ret = getaddrinfo(httpc->host,
-                      port,
-                      &hints,
-                      &result);
-    if (ret < 0) {
-        httpc_error("getaddrinfo fail: %s.", gai_strerror(ret));
-        ret = HTTPC_ERR_FAIL;
-        goto exit;
-    }
+    ret = httpc_ipv4_address_check(httpc->host, ipv4_addr, ipv4_port);
+    if (HTTPC_ERR_OK == ret) {
+        /* 直接连接提供的 IP 地址 */
+        struct sockaddr_in addr;
+        memset(&addr, 0, sizeof(addr));
+        addr.sin_family = AF_INET;
+        addr.sin_port = htons((0 == ipv4_port[0]) ? atoi(port) : atoi(ipv4_port));
+        ret = inet_pton(AF_INET, ipv4_addr, &addr.sin_addr);
+        if (ret <= 0) {
+            httpc_info("inet_pton fail: %s.", ret);
+            ret = HTTPC_ERR_FAIL;
+            goto exit;
+        }
 
-    char ip_str[INET_ADDRSTRLEN] = {0};
+        ret = connect(httpc->socket, (struct sockaddr *)&addr, sizeof(addr));
+        if (0 == ret) {
+            httpc_info("connected ip addr: %s, port: %s.", ipv4_addr, (0 == ipv4_port[0]) ? port : ipv4_port);
+        } else {
+            httpc_error("connect fail: %d, ip addr: %s, port: %s.", ret, ipv4_addr, (0 == ipv4_port[0]) ? port : ipv4_port);
+            ret = HTTPC_ERR_FAIL;
+            goto exit;
+        }
+    } else {
+        /* 通过 DNS 找到主机地址对应的 IP 地址并连接 */
+        struct addrinfo hints;
+        struct addrinfo *result = NULL;
+        struct addrinfo *cur = NULL;
 
-    for (cur = result; cur != NULL; cur = cur->ai_next) {
-        if (cur->ai_family == AF_INET) {
-            ret = connect(httpc->socket, cur->ai_addr, sizeof(struct sockaddr));
-            if (0 == ret) {
-                inet_ntop(AF_INET, &((struct sockaddr_in *)cur->ai_addr)->sin_addr, ip_str, INET_ADDRSTRLEN);
-                httpc_info("connected ip addr: %s.", ip_str);
-                break;
+        memset(&hints, 0, sizeof(hints));
+        ret = getaddrinfo(httpc->host,
+                          port,
+                          &hints,
+                          &result);
+        if (ret < 0) {
+            httpc_error("getaddrinfo fail: %s.", gai_strerror(ret));
+            ret = HTTPC_ERR_FAIL;
+            goto exit;
+        }
+
+        char ip_str[INET_ADDRSTRLEN] = {0};
+
+        for (cur = result; cur != NULL; cur = cur->ai_next) {
+            if (cur->ai_family == AF_INET) {
+                ret = connect(httpc->socket, cur->ai_addr, sizeof(struct sockaddr));
+                if (0 == ret) {
+                    inet_ntop(AF_INET, &((struct sockaddr_in *)cur->ai_addr)->sin_addr, ip_str, INET_ADDRSTRLEN);
+                    httpc_info("connected ip addr: %s.", ip_str);
+                    break;
+                }
             }
         }
+
+        freeaddrinfo(result);
     }
 
-    freeaddrinfo(result);
     ret = HTTPC_ERR_OK;
     return ret;
 
@@ -678,6 +760,40 @@ int httpc_recv_response(httpc_t *httpc, httpc_mode_t mode, char *buf, int size)
         break;
 
     default:
+        break;
+    }
+
+exit:
+    return ret;
+}
+
+int httpc_connection_status_get(httpc_t *httpc)
+{
+    int ret = HTTPC_ERR_FAIL;
+    int optval = 0;
+    socklen_t optlen = sizeof(optval);
+
+    if ((NULL == httpc) || (httpc->socket < 0)) {
+        ret = HTTPC_ERR_PARAM;
+        goto exit;
+    }
+
+    ret = getsockopt(httpc->socket, SOL_SOCKET, SO_ERROR, &optval, &optlen);
+    if (ret < 0) {
+        httpc_error("getsockopt fail: %d.", ret);
+        ret = HTTPC_ERR_FAIL;
+        goto exit;
+    }
+    httpc_debug("getsockopt optval: %d.", optval);
+
+    switch (optval) {
+    case ECONNRESET: /* Connection reset */
+        httpc_debug("http connection reset by server.");
+        ret = HTTPC_ERR_RST;
+        break;
+
+    default:
+        ret = HTTPC_ERR_OK;
         break;
     }
 

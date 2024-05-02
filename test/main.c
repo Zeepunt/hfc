@@ -65,6 +65,8 @@ static int test_http(char *method)
     }
     node.buf_used = 0;
 
+    printf("http start: %lds.\n", time(NULL));
+
     if (0 == strcmp(method, "get")) {
         httpc = httpc_init(TEST_HTTP_GET_URL, "80", &node, HTTP_VER_1_1, NULL);
         if (NULL == httpc) {
@@ -76,12 +78,13 @@ static int test_http(char *method)
         httpc_header_set(httpc, "Host: %s\r\n", httpc->host);
         httpc_header_set(httpc, "Accept: */*\r\n");
         httpc_header_set(httpc, "User-Agent: Tiny HTTPClient Agent\r\n");
+        httpc_header_set(httpc, "Connection: close\r\n");
         httpc_header_set(httpc, "\r\n");
 
         httpc_send_request(httpc, NULL, 0);
 
         httpc_recv_response(httpc, HTTPC_MODE_NORMAL, recv_buf, BUF_SIZE);
-        printf("get recv: %s\n.", recv_buf);
+        printf("get recv: %s\n", recv_buf);
     } else if (0 == strcmp(method, "post")) {
         httpc = httpc_init(TEST_HTTP_POST_URL, "80", &node, HTTP_VER_1_1, NULL);
         if (NULL == httpc) {
@@ -96,15 +99,18 @@ static int test_http(char *method)
         httpc_header_set(httpc, "Content-Length: %d\r\n", strlen(send_buf));
         httpc_header_set(httpc, "Accept: */*\r\n");
         httpc_header_set(httpc, "User-Agent: Tiny HTTPClient Agent\r\n");
+        httpc_header_set(httpc, "Connection: close\r\n");
         httpc_header_set(httpc, "\r\n");
 
         httpc_send_request(httpc, send_buf, strlen(send_buf));
 
         httpc_recv_response(httpc, HTTPC_MODE_NORMAL, recv_buf, BUF_SIZE);
-        printf("post recv: %s\n.", recv_buf);
+        printf("post recv: %s\n", recv_buf);
     } else {
         ret = -1;
     }
+
+    printf("http end: %lds.\n", time(NULL));
 
 exit:
     if (NULL != node.buf) {

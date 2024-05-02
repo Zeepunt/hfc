@@ -1,7 +1,7 @@
 /*
  * @Author       : Zeepunt
  * @Date         : 2023-06-17
- * @LastEditTime : 2023-06-17
+ * @LastEditTime : 2024-05-02
  *  
  * Gitee : https://gitee.com/zeepunt
  * Github: https://github.com/zeepunt
@@ -18,6 +18,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <unistd.h>
+#include <errno.h>
 
 #include <netdb.h>
 #include <sys/types.h>
