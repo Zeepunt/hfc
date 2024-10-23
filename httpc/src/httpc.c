@@ -111,33 +111,69 @@ static int httpc_ipv4_address_check(char *uri, char *addr, char *port)
 {
     int ret = HTTPC_ERR_OK;
 
+    int index = 0;
+    char *spilt = NULL;
+    char *ptr = NULL;
+
+    char ip_addr[15 + 1] = {0}; /* format: 255.255.255.255 */
+    char ip_port[5 + 1] = {0};  /* max is 65535 */
+
     if (NULL == uri) {
         ret = HTTPC_ERR_PARAM;
         goto exit;
     }
 
-    int index = 0;
-    char *spilt = NULL;
-    char *ptr = NULL;
+    if (strlen(uri) > (15 + 5 + 1)) { /* 255.255.255.255:65535 */
+        ret = HTTPC_ERR_PARAM;
+        goto exit;
+    }
 
-    char ip_addr[24] = {0};
     ptr = strstr(uri, ":");
+    // httpc_debug("ptr: %s.", ptr);
+
     if (NULL != ptr) {
         strncpy(ip_addr, uri, ptr - uri);
         ptr += 1;
-        strncpy(port, ptr, strlen(ptr));
+        if (strlen(ptr) <= 5) {
+            strncpy(ip_port, ptr, strlen(ptr));
+        }
     } else {
         strncpy(ip_addr, uri, strlen(uri));
     }
     strncpy(addr, ip_addr, strlen(ip_addr));
+
+    ret = 0;
+    for (index = 0; index < strlen(ip_port); index++) {
+        if ((ip_port[index] < '0') || (ip_port[index] > '9')) {
+            ret = -1;
+            break;
+        }
+    }
+    // httpc_debug("port ret: %d", ret);
+
+    if (0 == ret) {
+        strncpy(port, ip_port, strlen(ip_port));
+    } else {
+        port[0] = 0;
+    }
     httpc_debug("cur uri: %s, port: %s.", addr, port);
 
     ptr = NULL;
+    index = 0;
+    /**
+     * format: 
+     * 1) 192.168.0.1
+     * 2) abc.def.ghi.jkl
+     * 3) 192.abc.0.def
+     */
     spilt = strtok_r(ip_addr, ".", &ptr);
     while (NULL != spilt) {
         // httpc_debug("cur split: %s.", spilt);
         ret = atoi(spilt);
-        if ((ret < 0) || (ret > 255)) {
+        // httpc_debug("cur ret: %d.", ret);
+        if ((0 == ret) && (0 != strncmp("0", spilt, 1))
+            || (ret > 255)) {
+            index = 0;
             break;
         }
         spilt = strtok_r(NULL, ".", &ptr);
