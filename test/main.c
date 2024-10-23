@@ -1,12 +1,5 @@
 /*
- * @Author       : Zeepunt
- * @Date         : 2024-04-21
- * @Date         : 2024-04-21
- *  
- * Gitee : https://gitee.com/zeepunt
- * Github: https://github.com/zeepunt
- *  
- * Copyright (c) 2023 by ${git_name}, All Rights Reserved. 
+ * Copyright (c) 2023 - 2024 by Zeepunt, All Rights Reserved. 
  */
 #include <stdio.h>
 #include <stdlib.h>

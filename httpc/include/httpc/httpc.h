@@ -1,12 +1,5 @@
 /*
- * @Author       : Zeepunt
- * @Date         : 2023-06-17
- * @LastEditTime : 2024-05-02
- *  
- * Gitee : https://gitee.com/zeepunt
- * Github: https://github.com/zeepunt
- *  
- * Copyright (c) 2023 by Zeepunt, All Rights Reserved. 
+ * Copyright (c) 2023 - 2024 by Zeepunt, All Rights Reserved. 
  */
 #ifndef __HTTPC_H__
 #define __HTTPC_H__

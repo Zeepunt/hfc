@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2023 - 2024 by Zeepunt, All Rights Reserved. 
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
